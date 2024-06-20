@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Weather</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Weather</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar ms-auto">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Check Weather</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- <section id="cards-container" class="row">
+      <div class="card">
+        <form id="form" action="">
+          <div class="d-flex">
+            <input type="text" id="cityname" class="form-control" placeholder="Enter City/State/Country Name" required>
+            <input type="submit" id="check" class="btn btn-primary ms-3" value="Check">
+          </div>
+        </form>
+      </div>
+      <div class="card1 py-4">
+        <h4 class="text-decoration-underline">Weather</h4>
+        <h5 id="temp"></h5>
+        <h5 id="humidity"></h5>
+        <h5 id="pressure"></h5>
+      </div> -->
+    <form class="card" id="search-btn">
+      <div class="d-flex">
+        <input type="text" class="city-input form-control" id="city-input" placeholder="Enter City Name">
+        <button class="btn btn-primary ms-3" id="search-form" type="submit"><i
+            class="material-icons">search</i></button>
+      </div>
+    </form>
+
+    <div class="weather-app mt-0">
+      <div class="city-date-section">
+        <h2 class="city">Surat</h2>
+        <p class="date bg-primary text-light">20 Jan 2024</p>
+      </div>
+      <div class="temperature-info">
+        <div class="description">
+          <i class="material-icons">cloud</i>
+          <span class="description-text">overcast cloud</span>
+        </div>
+        <div class="temp">27°</div>
+      </div>
+      <div class="additional-info d-flex flex-wrap gap-3">
+        <div class="wind-info">
+          <i class="material-icons fs-4">air</i>
+          <div>
+            <h5 class="wind-speed">4.12 km/h</h5>
+            <p class="wind-label">Wind</p>
+          </div>
+        </div>
+        <div class="humidity-info">
+          <i class="material-icons fs-4">water_drop</i>
+          <div>
+            <h5 class="humidity">94%</h5>
+            <p class="humidity-label">humidity</p>
+          </div>
+        </div>
+        <div class="visibility-info">
+          <i class="material-icons fs-4">visibility</i>
+          <div>
+            <h5 class="visibility-distance">3 km</h5>
+            <p class="visibility">Visibility</p>
+          </div>
+        </div>
+        <div class="temp-min-info">
+          <i class="material-icons fs-4">remove</i>
+          <div>
+            <h5 class="temp-min">20°</h5>
+            <p class="temp-mi">Min T.</p>
+          </div>
+        </div>
+        <div class="temp-max-info">
+          <i class="material-icons fs-4">add</i>
+          <div>
+            <h5 class="temp-max">30°</h5>
+            <p class="temp-ma">Max T.</p>
+          </div>
+        </div>
+        <div class="timezone-info">
+          <i class="material-icons fs-4">schedule</i>
+          <div>
+            <h5 class="time-zone">19800</h5>
+            <p class="time-zon">Timezone</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Weather</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">Kalpesh Gupta</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <!-- JQuery -->
+  <script src="./assets/js/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script>
+    // document.getElementById('humidity').innerHTML = 'Enter City Name First!'
+    // let form = document.querySelector('#form')
+    // form.addEventListener('submit', function (e) {
+    //   e.preventDefault()
+    //   var city = document.getElementById('cityname').value
+    //   var API = "a045721e3bce6c83975a8c57addf60a2"
+    //   $.ajax({
+    //     url: `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API}`,
+    //     method: 'GET',
+    //     dataType: 'json',
+    //     success: function (res) {
+    //       if (res.length > 0) {
+    //         var lat = res[0].lat
+    //         var lon = res[0].lon
+    //         findWeather(lat, lon)
+    //       } else {
+    //         document.getElementById('humidity').innerHTML = 'Not Found 😓'
+    //         document.getElementById('pressure').innerHTML = ''
+    //         document.getElementById('temp').innerHTML = ''
+    //       }
+    //     }
+    //   })
+    //   function findWeather(lat, lon) {
+    //     var API = "a045721e3bce6c83975a8c57addf60a2"
+    //     $.ajax({
+    //       url: `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API}`,
+    //       method: 'GET',
+    //       dataType: 'json',
+    //       success: function (res) {
+    //         var data = res
+    //         document.getElementById('humidity').innerHTML = 'Humidity : ' + data.main.humidity
+    //         document.getElementById('pressure').innerHTML = 'Pressure : ' + data.main.pressure
+    //         document.getElementById('temp').innerHTML = 'Temperature : ' + data.main.temp
+    //       }
+    //     })
+    //   }
+
+    // FOR API KEY
+    // Go to the link-  https://home.openweathermap.org/api_keys
+    // Sign in
+    // find your api key
+
+    const apiKey = 'e4c4ca7b6c23f829c43cca5857ddba05';
+    async function fetchWeatherData(city) {
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
+        console.log(response)
+
+        if (!response.ok) {
+          throw new Error("Unable to fetch weather data");
+        }
+        const data = await response.json();
+        updateWeatherUI(data);
+      } catch (error) {
+        console.error(error);
+        alert("Failed to fetch weather data. Please try again.");
+      }
+    }
+
+    function updateWeatherUI(data) {
+      const cityElement = document.querySelector(".city");
+      const temperature = document.querySelector(".temp");
+      const min = document.querySelector(".temp-min")
+      const max = document.querySelector(".temp-max")
+      const time = document.querySelector(".time-zone")
+      const windSpeed = document.querySelector(".wind-speed");
+      const humidity = document.querySelector(".humidity");
+      const visibility = document.querySelector(".visibility-distance");
+      const descriptionText = document.querySelector(".description-text");
+      const date = document.querySelector(".date");
+      const descriptionIcon = document.querySelector(".description i");
+
+      cityElement.textContent = data.name;
+      temperature.textContent = `${Math.round(data.main.temp)}°`;
+      windSpeed.textContent = `${data.wind.speed} km/h`;
+      time.textContent = `${data.timezone}`;
+      humidity.textContent = `${data.main.humidity}%`;
+      visibility.textContent = `${data.visibility / 1000} km`;
+      max.textContent = `${Math.round(data.main.temp_max)}°`;
+      min.textContent = `${Math.round(data.main.temp_min)}°`;
+      descriptionText.textContent = data.weather[0].description;
+
+      const currentDate = new Date();
+      date.textContent = currentDate.toDateString();
+      const weatherIconName = getWeatherIconName(data.weather[0].main);
+      descriptionIcon.textContent = weatherIconName;
+    }
+
+    function getWeatherIconName(weatherCondition) {
+      const iconMap = {
+        Clear: "wb_sunny",
+        Clouds: "wb_cloudy",
+        Rain: "umbrella",
+        Thunderstorm: "flash_on",
+        Drizzle: "grain",
+        Snow: "ac_unit",
+        Mist: "cloud",
+        Smoke: "cloud",
+        Haze: "cloud",
+        Fog: "cloud",
+      };
+
+      return iconMap[weatherCondition] || "help";
+    }
+
+    // const formElement = document.getElementsByClassName(".search-form");
+    // const inputElement = document.getElementsByClassName(".city-input");
+
+    // formElement.addEventListener("submit", function (e) {
+    //   e.preventDefault();
+    let form = document.querySelector('#search-btn')
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+      var city = document.getElementById('city-input').value
+      console.log("Form submitted with city:", city); // Add this line
+      if (city !== "") {
+        fetchWeatherData(city);
+        inputElement.value = "";
+      }
+    });
+
+
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
